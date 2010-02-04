@@ -19,7 +19,7 @@
 +    target.path = /usr/bin/
      INSTALLS += target
 -    datas.path = /usr/local/games/jag
-+    datas.path = /usr/share/jag
++    datas.path = /usr/share/games/jag
      datas.files = data
      INSTALLS += datas
      LIBS += -lXrandr
@@ -30,7 +30,7 @@
  #ifdef Q_WS_X11
    if (!QDir(resourcePath).exists())
 -    resourcePath = "/usr/local/games/jag/data/";
-+    resourcePath = "/usr/share/jag/data/";
++    resourcePath = "/usr/share/games/jag/data/";
  #endif
  
    langPath = resourcePath + "lang/";

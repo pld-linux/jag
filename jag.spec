@@ -43,8 +43,10 @@ granicach czasu.
 
 %build
 qmake-qt4
-%{__sed} -i 's,local/games,share,g;s,local/,,g' Makefile
-%{__make}
+%{__make} \
+	CXX="%{__cxx}" \
+	CXXFLAGS="%{rpmcppflags} %{rpmcxxflags}" \
+	LFLAGS="%{rpmcxxflags} %{rpmldflags}"
 
 %install
 rm -rf $RPM_BUILD_ROOT
@@ -59,4 +61,4 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc README
 %attr(755,root,root) %{_bindir}/jag
-%{_datadir}/%{name}
+%{_datadir}/games/%{name}
