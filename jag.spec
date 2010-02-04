@@ -38,8 +38,10 @@ granicach czasu.
 
 %prep
 %setup -q -n %{name}-%{version}-src
-%{__sed} -i -e 's,\r$,,' editor/editor.pro Game.pro main.cpp
 %patch0 -p1
+
+# change dos formatting to unix one
+%{__sed} -i -e 's,\r$,,' editor/editor.pro Game.pro main.cpp
 
 %build
 qmake-qt4
