@@ -8,12 +8,12 @@ Version:	0.3.1
 Release:	0.1
 License:	GPL
 Group:		X11/Applications/Games
-Source0:	%{name}-%{version}-src.zip
+Source0:	http://jag.xlabsoft.com/files/%{name}-%{version}-src.zip
 # Source0-md5:	78a408629ca9858dc8279d9c124386f7
 Patch0:		%{name}-paths.patch
 URL:		http://jag.xlabsoft.com
-BuildRequires:	OpenGL-devel
 BuildRequires:	OpenGL-GLU-devel
+BuildRequires:	OpenGL-devel
 BuildRequires:	QtGui-devel
 BuildRequires:	QtOpenGL-devel
 BuildRequires:	QtXml-devel
