@@ -18,7 +18,6 @@ BuildRequires:	QtGui-devel
 BuildRequires:	QtOpenGL-devel
 BuildRequires:	QtXml-devel
 BuildRequires:	SDL_mixer-devel
-BuildRequires:	dos2unix
 BuildRequires:	qt4-build
 BuildRequires:	qt4-qmake
 BuildRequires:	sed >= 4.0
@@ -39,7 +38,7 @@ granicach czasu.
 
 %prep
 %setup -q -n %{name}-%{version}-src
-dos2unix editor/editor.pro Game.pro main.cpp
+%{__sed} -i -e 's,\r$,,' editor/editor.pro Game.pro main.cpp
 %patch0 -p1
 
 %build
