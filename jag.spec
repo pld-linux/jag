@@ -12,12 +12,13 @@ Source0:	%{name}-%{version}-src.zip
 # Source0-md5:	78a408629ca9858dc8279d9c124386f7
 Patch0:		%{name}-paths.patch
 URL:		http://jag.xlabsoft.com
-BuildRequires:	OpenGL-GL-devel
+BuildRequires:	OpenGL-devel
 BuildRequires:	OpenGL-GLU-devel
 BuildRequires:	QtGui-devel
 BuildRequires:	QtOpenGL-devel
 BuildRequires:	QtXml-devel
 BuildRequires:	SDL_mixer-devel
+BuildRequires:	dos2unix
 BuildRequires:	qt4-build
 BuildRequires:	qt4-qmake
 BuildRequires:	sed >= 4.0
@@ -38,6 +39,7 @@ granicach czasu.
 
 %prep
 %setup -q -n %{name}-%{version}-src
+dos2unix editor/editor.pro Game.pro main.cpp
 %patch0 -p1
 
 %build
