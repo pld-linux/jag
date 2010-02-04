@@ -1,0 +1,36 @@
+--- jag-0.3.1-src/editor/editor.pro~	2009-12-14 22:20:14.000000000 +0100
++++ jag-0.3.1-src/editor/editor.pro	2010-02-03 10:17:03.087049652 +0100
+@@ -4,7 +4,7 @@
+ 
+ unix: {
+     TARGET = ./bin/jag-editor
+-    target.path = /usr/local/bin/
++    target.path = /usr/bin/
+     INSTALLS += target
+ }
+ win32: {
+--- jag-0.3.1-src/Game.pro~	2009-12-13 13:21:08.000000000 +0100
++++ jag-0.3.1-src/Game.pro	2010-02-03 10:17:56.383711575 +0100
+@@ -5,9 +5,9 @@
+     opengl
+ unix: { 
+     TARGET = ./bin/jag
+-    target.path = /usr/local/bin/
++    target.path = /usr/bin/
+     INSTALLS += target
+-    datas.path = /usr/local/games/jag
++    datas.path = /usr/share/jag
+     datas.files = data
+     INSTALLS += datas
+     LIBS += -lXrandr
+--- jag-0.3.1-src/main.cpp~	2009-12-13 22:52:20.000000000 +0100
++++ jag-0.3.1-src/main.cpp	2010-02-03 10:18:32.853706158 +0100
+@@ -34,7 +34,7 @@
+   // on X11, we'll check if data directory exists locally first
+ #ifdef Q_WS_X11
+   if (!QDir(resourcePath).exists())
+-    resourcePath = "/usr/local/games/jag/data/";
++    resourcePath = "/usr/share/jag/data/";
+ #endif
+ 
+   langPath = resourcePath + "lang/";
